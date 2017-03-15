@@ -13,6 +13,7 @@ import { ColumnMode, SortType, SelectionType } from '../types';
 import { DataTableBodyComponent } from './body';
 import { DataTableColumnDirective } from './columns';
 import { DatatableRowDetailDirective } from './row-detail';
+import { Legend } from './legend/legend';
 
 @Component({
   selector: 'ngx-datatable',
@@ -20,7 +21,29 @@ import { DatatableRowDetailDirective } from './row-detail';
     <div
       visibility-observer
       (visible)="recalculate()">
+      <datatable-filter #filter
+        *ngIf="isFilter"
+        [placeholder]="filterPlaceholder"
+        (updated)="filterUpdate($event)"></datatable-filter>
+      <datatable-paging
+        #pagingHeader
+        *ngIf="isPagingHeader"
+        class="datatable-paging-header"
+        [rowCount]="rowCount"
+        [pageSize]="pageSize"
+        [offset]="offset"
+        [pagingHeight]="pagingHeight"
+        [totalMessage]="messages.totalMessage"
+        [pagerLeftArrowIcon]="cssClasses.pagerLeftArrow"
+        [pagerRightArrowIcon]="cssClasses.pagerRightArrow"
+        [pagerPreviousIcon]="cssClasses.pagerPrevious"
+        [selectedCount]="selected.length"
+        [selectedMessage]="!!selectionType && messages.selectedMessage"
+        [pagerNextIcon]="cssClasses.pagerNext"
+        (page)="onPagingPage($event)">
+      </datatable-paging>
       <datatable-header
+        #header
         *ngIf="headerHeight"
         [sorts]="sorts"
         [sortType]="sortType"
@@ -40,6 +63,7 @@ import { DatatableRowDetailDirective } from './row-detail';
         (select)="onHeaderSelect($event)">
       </datatable-header>
       <datatable-body
+        #body
         [rows]="rows"
         [scrollbarV]="scrollbarV"
         [scrollbarH]="scrollbarH"
@@ -66,12 +90,18 @@ import { DatatableRowDetailDirective } from './row-detail';
         (select)="onBodySelect($event)"
         (scroll)="onBodyScroll($event)">
       </datatable-body>
-      <datatable-footer
-        *ngIf="footerHeight"
+      <datatable-legend
+        *ngIf="isLegend"
+        [legends]="legends">
+      </datatable-legend>
+      <datatable-paging
+        #pagingFooter
+        *ngIf="isPagingFooter"
+        class="datatable-paging-footer"
         [rowCount]="rowCount"
         [pageSize]="pageSize"
         [offset]="offset"
-        [footerHeight]="footerHeight"
+        [pagingHeight]="pagingHeight"
         [totalMessage]="messages.totalMessage"
         [pagerLeftArrowIcon]="cssClasses.pagerLeftArrow"
         [pagerRightArrowIcon]="cssClasses.pagerRightArrow"
@@ -79,8 +109,8 @@ import { DatatableRowDetailDirective } from './row-detail';
         [selectedCount]="selected.length"
         [selectedMessage]="!!selectionType && messages.selectedMessage"
         [pagerNextIcon]="cssClasses.pagerNext"
-        (page)="onFooterPage($event)">
-      </datatable-footer>
+        (page)="onPagingPage($event)">
+      </datatable-paging>
     </div>
   `,
   encapsulation: ViewEncapsulation.None,
@@ -90,6 +120,11 @@ import { DatatableRowDetailDirective } from './row-detail';
   }
 })
 export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
+  @ViewChild('header') header;
+  @ViewChild('body') body;
+  @ViewChild('filter') filter;
+  @ViewChild('pagingHeader') pagingHeader;
+  @ViewChild('pagingFooter') pagingFooter;
 
   /**
    * Rows that are displayed in the table.
@@ -188,6 +223,24 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
   @Input() columnMode: ColumnMode = ColumnMode.standard;
 
   /**
+   * If filter should be visible
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isFilter: boolean = false;
+  /**
+   * Filter placeholder
+   * @type {string}
+   * @memberOf DatatableComponent
+   */
+  @Input() filterPlaceholder: string = 'Search';
+  /**
+   * Event handler when filter is updated
+   * @type {EventEmitter}
+   * @memberOf DatatableComponent
+   */
+  @Output() filterUpdated = new EventEmitter();
+  /**
    * The minimum header height in pixels.
    * Pass a falsey for no header
    *
@@ -197,13 +250,41 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
   @Input() headerHeight: any = 30;
 
   /**
-   * The minimum footer height in pixels.
-   * Pass falsey for no footer
+   * The minimum paging height in pixels.
+   * Pass falsey for no paging
    *
    * @type {number}
    * @memberOf DatatableComponent
    */
-  @Input() footerHeight: number = 0;
+  @Input() pagingHeight: number = 0;
+  /**
+   * Paging visible in header
+   *
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isPagingHeader: boolean = false;
+  /**
+   * Paging visible in footer
+   *
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isPagingFooter: boolean = false;
+  /**
+   * If legend should be visible
+   *
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isLegend: boolean = false;
+  /**
+   * Legend objects
+   *
+   * @type {Legend[]}
+   * @memberOf DatatableComponent
+   */
+  @Input() legends: Legend[];
 
   /**
    * If the table should use external paging
@@ -787,7 +868,7 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
     if (this.scrollbarV) {
       let height = dims.height;
       if (this.headerHeight) height = height - this.headerHeight;
-      if (this.footerHeight) height = height - this.footerHeight;
+      if (this.pagingHeight) height = height - this.pagingHeight;
       this.bodyHeight = height;
     }
 
@@ -836,13 +917,13 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   /**
-   * The footer triggered a page event.
+   * The paging triggered a page event.
    *
    * @param {*} event
    *
    * @memberOf DatatableComponent
    */
-  onFooterPage(event: any) {
+  onPagingPage(event: any) {
     this.offset = event.page - 1;
     this.bodyComponent.updateOffsetY(this.offset);
 
@@ -992,16 +1073,13 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
    *
    * @memberOf DatatableComponent
    */
-  onHeaderSelect(event: any): void {
-    // before we splice, chk if we currently have all selected
-    const allSelected = this.selected.length === this.rows.length;
-
+  onHeaderSelect(event): void {
+    const allSelected = event;
     // remove all existing either way
     this.selected.splice(0, this.selected.length);
-
-    // do the opposite here
-    if (!allSelected) {
-      this.selected.push(...this.rows);
+    // add all rows back
+    if (allSelected) {
+      this.selected = Array.from(this.rows);
     }
 
     this.select.emit({
@@ -1020,4 +1098,36 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
     this.select.emit(event);
   }
 
+  /**
+   * Emits an event whenever the filter is updated
+   *
+   * @param {event} event
+   *
+   * @memberOf DatatableComponent
+   */
+  filterUpdate(event) {
+      this.filterUpdated.emit(event);
+  }
+  /**
+   * Resets the table settings
+   *
+   * @param {event} event
+   *
+   * @memberOf DatatableComponent
+   */
+  reset() {
+    if (this.headerHeight) {
+      this.header.reset();
+    }
+    this.body.reset();
+    if (this.isFilter) {
+      this.filter.reset();
+    }
+    if (this.isPagingHeader) {
+      this.pagingHeader.reset();
+    }
+    if (this.isPagingFooter) {
+      this.pagingFooter.reset();
+    }
+  }
 }

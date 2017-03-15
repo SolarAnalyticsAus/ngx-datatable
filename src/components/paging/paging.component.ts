@@ -1,21 +1,14 @@
 import {
-  Component, Output, EventEmitter, ChangeDetectionStrategy, Input
+  Component, Output, EventEmitter, ChangeDetectionStrategy, Input, ViewChild
 } from '@angular/core';
 
 @Component({
-  selector: 'datatable-footer',
+  selector: 'datatable-paging',
   template: `
     <div
       [ngClass]="{'selected-count': selectedMessage}"
-      [style.height.px]="footerHeight">
-      <div class="page-count">
-        <span *ngIf="selectedMessage">
-          {{selectedCount.toLocaleString()}} {{selectedMessage}} / 
-        </span>
-
-        {{rowCount.toLocaleString()}} {{totalMessage}}
-      </div>
-      <datatable-pager
+      [style.height.px]="pagingHeight">
+      <datatable-pager #pager
         [pagerLeftArrowIcon]="pagerLeftArrowIcon"
         [pagerRightArrowIcon]="pagerRightArrowIcon"
         [pagerPreviousIcon]="pagerPreviousIcon"
@@ -29,13 +22,15 @@ import {
     </div>
   `,
   host: {
-    class: 'datatable-footer'
+    class: 'datatable-paging'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableFooterComponent {
+export class DataTablePagingComponent {
 
-  @Input() footerHeight: number;
+  @ViewChild('pager') pager;
+
+  @Input() pagingHeight: number;
   @Input() rowCount: number;
   @Input() pageSize: number;
   @Input() offset: number;
@@ -56,6 +51,10 @@ export class DataTableFooterComponent {
 
   get curPage(): number {
     return this.offset + 1;
+  }
+
+  reset(): void {
+    this.pager.reset();
   }
 
 }

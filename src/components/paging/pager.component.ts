@@ -126,6 +126,10 @@ export class DataTablePagerComponent {
     }
   }
 
+  reset(): void {
+    this.selectPage(1);
+  }
+
   calcPages(page?: number): any[] {
     const pages = [];
     let startPage = 1;

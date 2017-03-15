@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import 'rxjs/add/observable/fromEvent';
 
 import {
   DatatableComponent,
   DataTableColumnDirective,
   DataTableHeaderComponent,
+  DataTableFilterComponent,
   DataTableBodyComponent,
-  DataTableFooterComponent,
+  DataTablePagingComponent,
+  DataTableLegendComponent,
   DataTableHeaderCellComponent,
   DataTablePagerComponent,
   DataTableBodyRowComponent,
@@ -32,7 +35,8 @@ import {
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
     VisibilityDirective,
@@ -44,10 +48,12 @@ import {
     DatatableComponent,
     DataTableColumnDirective,
     DataTableHeaderComponent,
+    DataTableFilterComponent,
     DataTableHeaderCellComponent,
     DataTableBodyComponent,
-    DataTableFooterComponent,
+    DataTablePagingComponent,
     DataTablePagerComponent,
+    DataTableLegendComponent,
     ProgressBarComponent,
     DataTableBodyRowComponent,
     DataTableRowWrapperComponent,

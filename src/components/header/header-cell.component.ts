@@ -1,6 +1,7 @@
 import {
   Component, Input, EventEmitter, Output, HostBinding
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { SortDirection, SortType, SelectionType } from '../../types';
 import { nextSortDir } from '../../utils';
@@ -14,8 +15,8 @@ import { nextSortDir } from '../../utils';
         class="datatable-checkbox">
         <input 
           type="checkbox"
-          [attr.checked]="allRowsSelected"
-          (change)="select.emit(!allRowsSelected)" 
+          [(ngModel)]="allRowsSelected"
+          (change)="select.emit($event.target.checked)"
         />
       </label>
       <span 
@@ -146,4 +147,9 @@ export class DataTableHeaderCellComponent {
     }
   }
 
+  reset(): void {
+    if (this.allRowsSelected) {
+      this.allRowsSelected = false;
+    }
+  }
 }

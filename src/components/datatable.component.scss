@@ -121,6 +121,27 @@
   }
 
   /**
+   * Filter Styles
+   */
+  .datatable-filter {
+    display: inline-block;
+    float: left;
+    margin: 20px 20px 0 20px;
+    input {
+      border: 1px solid lightgray;
+      height: 32px;
+      width: 200px;
+      padding: 8px 10px 8px 30px;
+      font-size: 1.1rem;
+    }
+    .icon-search {
+      position: relative;
+      top: 5px;
+      left: -195px;
+      font-size: 1.8rem;
+    }
+  }
+  /**
    * Header Styles
    */
   .datatable-header {
@@ -179,7 +200,7 @@
     display: block;
 
     .datatable-scroll{
-      display: inline-block;
+      display: inline;
     }
 
     .datatable-row-detail {
@@ -216,16 +237,27 @@
   }
 
   /**
-   * Footer Styles
+   * Legend Styles
    */
-  .datatable-footer {
-    display: block;
-    width: 100%;
+  .datatable-legend {
+    display: inline-block;
+    float: left;
+    ul > li {
+      display: inline-block;
+    }
+  }
+
+  /**
+   * Paging Styles
+   */
+  .datatable-paging {
+    display: inline-block;
+    float: right;
+    margin: 10px 0;
 
     > div {
       display: flex;
       align-items: center;
-      width: 100%;
     }
 
     .selected-count {

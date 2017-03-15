@@ -61,6 +61,7 @@ import { ScrollerComponent } from './scroller.component';
   }
 })
 export class DataTableBodyComponent implements OnInit, OnDestroy {
+  @ViewChild('selector') selector;
 
   @Input() scrollbarV: boolean;
   @Input() scrollbarH: boolean;
@@ -538,4 +539,7 @@ export class DataTableBodyComponent implements OnInit, OnDestroy {
     this.updateRows();
   }
 
+  reset(): void {
+    this.selector.reset();
+  }
 }

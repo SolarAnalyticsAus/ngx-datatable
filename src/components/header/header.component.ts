@@ -1,5 +1,5 @@
 import {
-  Component, Output, EventEmitter, Input, HostBinding
+  Component, Output, EventEmitter, Input, HostBinding, ViewChild
 } from '@angular/core';
 import { SortType, SelectionType } from '../../types';
 import { columnsByPin, columnGroupWidths, columnsByPinArr, translateXY } from '../../utils';
@@ -18,6 +18,7 @@ import { DataTableColumnDirective } from '../columns';
         [class]="'datatable-row-' + colGroup.type"
         [ngStyle]="stylesByGroup(colGroup.type)">
         <datatable-header-cell
+          #headerCell
           *ngFor="let column of colGroup.columns; trackBy: columnTrackingFn"
           resizeable
           [resizeEnabled]="column.resizeable"
@@ -49,6 +50,7 @@ import { DataTableColumnDirective } from '../columns';
   }
 })
 export class DataTableHeaderComponent {
+  @ViewChild('headerCell') headerCell;
 
   @Input() sortAscendingIcon: any;
   @Input() sortDescendingIcon: any;
@@ -200,4 +202,7 @@ export class DataTableHeaderComponent {
     return styles;
   }
 
+  reset(): void {
+    this.headerCell.reset();
+  }
 }

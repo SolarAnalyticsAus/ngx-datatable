@@ -74,7 +74,9 @@ export class DataTableSelectionComponent {
     const { type, event, row } = model;
     const chkbox = this.selectionType === SelectionType.checkbox;
     const select = (!chkbox && (type === 'click' || type === 'dblclick')) || 
-      (chkbox && type === 'checkbox');
+      // If row is checkboxable, handle row selection, apply selection to whole row
+      // Ignore events coming from the checkbox column
+      (chkbox && type !== 'checkbox');
 
     if(select) {
       this.selectRow(event, index, row);
@@ -162,4 +164,8 @@ export class DataTableSelectionComponent {
     });
   }
 
+  reset(): void {
+    // Remove selection
+    this.selected.splice(0, this.selected.length);
+  }
 }
