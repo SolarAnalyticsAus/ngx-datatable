@@ -19,7 +19,7 @@ import * as import10 from '../../../../build/components/body/body.component';
 import * as import11 from './selection.component.ngfactory';
 import * as import12 from '../../../../build/components/body/selection.component';
 const styles_DataTableBodyComponent:any[] = ([] as any[]);
-export const RenderType_DataTableBodyComponent:import0.RendererTypeV2 = import0.ɵcrt({
+export const RenderType_DataTableBodyComponent:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
   styles: styles_DataTableBodyComponent,
   data: {}
@@ -142,7 +142,7 @@ function View_DataTableBodyComponent_3():import0.ɵViewDefinition {
         allowDefault = (pd_0 && allowDefault);
       }
       if (('activate' === eventName)) {
-        const pd_1:any = ((<any>import0.ɵnov(view.parent.parent,3).onActivate($event,view.context.index)) !== false);
+        const pd_1:any = ((<any>import0.ɵnov(view.parent.parent,4).onActivate($event,view.context.index)) !== false);
         allowDefault = (pd_1 && allowDefault);
       }
       return allowDefault;
@@ -202,7 +202,7 @@ function View_DataTableBodyComponent_3():import0.ɵViewDefinition {
     const currVal_7:any = comp.rowClass;
     const currVal_8:any = view.context.$implicit;
     const currVal_9:any = comp.offsetX;
-    const currVal_10:any = import0.ɵnov(view.parent.parent,3).getRowSelected(view.context.$implicit);
+    const currVal_10:any = import0.ɵnov(view.parent.parent,4).getRowSelected(view.context.$implicit);
     const currVal_11:any = comp.rowHeight;
     check(view,5,0,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10,currVal_11);
   },(check,view) => {
@@ -247,7 +247,7 @@ function View_DataTableBodyComponent_2():import0.ɵViewDefinition {
       return allowDefault;
     },import8.View_ScrollerComponent_0,import8.RenderType_ScrollerComponent),
       import0.ɵdid(122880,[[
-        1,
+        2,
         4
       ]
     ],0,import9.ScrollerComponent,[
@@ -338,7 +338,8 @@ function View_DataTableBodyComponent_4():import0.ɵViewDefinition {
 }
 export function View_DataTableBodyComponent_0():import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-    import0.ɵqud(335544320,1,{scroller: 0}),
+    import0.ɵqud(201326592,1,{selector: 0}),
+    import0.ɵqud(335544320,2,{scroller: 0}),
     import0.ɵted((null as any),['\n    ']),
     import0.ɵeld(0,(null as any),(null as any),11,'datatable-selection',([] as any[]),(null as any),[
       [
@@ -365,11 +366,19 @@ export function View_DataTableBodyComponent_0():import0.ɵViewDefinition {
       }
       return allowDefault;
     },import11.View_DataTableSelectionComponent_0,import11.RenderType_DataTableSelectionComponent),
-      import0.ɵdid(24576,[[
+    import0.ɵdid(24576,[
+      [
+        1,
+        4
+      ]
+      ,
+      [
         'selector',
         4
       ]
-    ],0,import12.DataTableSelectionComponent,([] as any[]),{
+
+    ]
+    ,0,import12.DataTableSelectionComponent,([] as any[]),{
       rows: [
         0,
         'rows'
@@ -450,16 +459,16 @@ export function View_DataTableBodyComponent_0():import0.ɵViewDefinition {
     const currVal_3:any = comp.selectionType;
     const currVal_4:any = comp.rowIdentity;
     const currVal_5:any = comp.selectCheck;
-    check(view,3,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5);
+    check(view,4,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5);
     const currVal_6:any = comp.loadingIndicator;
-    check(view,6,0,currVal_6);
+    check(view,7,0,currVal_6);
     const currVal_7:any = ((comp.rows == null)? (null as any): comp.rows.length);
-    check(view,9,0,currVal_7);
+    check(view,10,0,currVal_7);
     const currVal_8:boolean = !((comp.rows == null)? (null as any): comp.rows.length);
-    check(view,12,0,currVal_8);
+    check(view,13,0,currVal_8);
   },(null as any));
 }
-const RenderType_DataTableBodyComponent_Host:import0.RendererTypeV2 = import0.ɵcrt({
+const RenderType_DataTableBodyComponent_Host:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
   styles: ([] as any[]),
   data: {}

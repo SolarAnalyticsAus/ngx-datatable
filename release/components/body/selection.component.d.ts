@@ -26,4 +26,5 @@ export declare class DataTableSelectionComponent {
     focusCell(cellElement: any, rowElement: any, keyCode: number, cellIndex: number): void;
     getRowSelected(row: any): boolean;
     getRowSelectedIdx(row: any, selected: any[]): number;
+    reset(): void;
 }

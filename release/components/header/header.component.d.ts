@@ -2,6 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { SortType, SelectionType } from '../../types';
 import { DataTableColumnDirective } from '../columns';
 export declare class DataTableHeaderComponent {
+    headerCell: any;
     sortAscendingIcon: any;
     sortDescendingIcon: any;
     scrollbarH: boolean;
@@ -39,4 +40,5 @@ export declare class DataTableHeaderComponent {
     onSort({column, prevValue, newValue}: any): void;
     calcNewSorts(column: any, prevValue: number, newValue: number): any[];
     stylesByGroup(group: string): any;
+    reset(): void;
 }

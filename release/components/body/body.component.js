@@ -439,6 +439,9 @@ var DataTableBodyComponent = (function () {
         this.updateIndexes();
         this.updateRows();
     };
+    DataTableBodyComponent.prototype.reset = function () {
+        this.selector.reset();
+    };
     return DataTableBodyComponent;
 }());
 DataTableBodyComponent.decorators = [
@@ -453,6 +456,7 @@ DataTableBodyComponent.decorators = [
 /** @nocollapse */
 DataTableBodyComponent.ctorParameters = function () { return []; };
 DataTableBodyComponent.propDecorators = {
+    'selector': [{ type: core_1.ViewChild, args: ['selector',] },],
     'scrollbarV': [{ type: core_1.Input },],
     'scrollbarH': [{ type: core_1.Input },],
     'loadingIndicator': [{ type: core_1.Input },],

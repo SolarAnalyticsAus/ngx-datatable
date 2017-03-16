@@ -7,23 +7,190 @@
 
 import * as import0 from './datatable.component.css.ngstyle';
 import * as import1 from '@angular/core';
-import * as import2 from './header/header.component.ngfactory';
-import * as import3 from '../../../build/components/header/header.component';
-import * as import4 from './footer/footer.component.ngfactory';
-import * as import5 from '../../../build/components/footer/footer.component';
-import * as import6 from '../../../build/components/datatable.component';
-import * as import7 from '../../../build/directives/visibility.directive';
-import * as import8 from '@angular/common';
-import * as import9 from './body/body.component.ngfactory';
-import * as import10 from '../../../build/components/body/body.component';
+import * as import2 from './filter/filter.component.ngfactory';
+import * as import3 from '../../../build/components/filter/filter.component';
+import * as import4 from './paging/paging.component.ngfactory';
+import * as import5 from '../../../build/components/paging/paging.component';
+import * as import6 from './header/header.component.ngfactory';
+import * as import7 from '../../../build/components/header/header.component';
+import * as import8 from './legend/legend.component.ngfactory';
+import * as import9 from '../../../build/components/legend/legend.component';
+import * as import10 from '../../../build/components/datatable.component';
+import * as import11 from '../../../build/directives/visibility.directive';
+import * as import12 from '@angular/common';
+import * as import13 from './body/body.component.ngfactory';
+import * as import14 from '../../../build/components/body/body.component';
 const styles_DatatableComponent:any[] = [import0.styles];
-export const RenderType_DatatableComponent:import1.RendererTypeV2 = import1.ɵcrt({
+export const RenderType_DatatableComponent:import1.RendererType2 = import1.ɵcrt({
   encapsulation: 2,
   styles: styles_DatatableComponent,
   data: {}
 }
 );
 function View_DatatableComponent_1():import1.ɵViewDefinition {
+  return import1.ɵvid(0,[
+      import1.ɵeld(0,(null as any),(null as any),1,'datatable-filter',[[
+        'class',
+        'datatable-filter'
+      ]
+      ],(null as any),[[
+        (null as any),
+        'updated'
+      ]
+    ],(view,eventName,$event) => {
+      var allowDefault:boolean = true;
+      var comp:any = view.component;
+      if (('updated' === eventName)) {
+        const pd_0:any = ((<any>comp.filterUpdate($event)) !== false);
+        allowDefault = (pd_0 && allowDefault);
+      }
+      return allowDefault;
+    },import2.View_DataTableFilterComponent_0,import2.RenderType_DataTableFilterComponent),
+    import1.ɵdid(24576,[
+      [
+        3,
+        4
+      ]
+      ,
+      [
+        'filter',
+        4
+      ]
+
+    ]
+      ,0,import3.DataTableFilterComponent,([] as any[]),{placeholder: [
+        0,
+        'placeholder'
+      ]
+    },{updated: 'updated'})
+  ]
+  ,(check,view) => {
+    var comp:any = view.component;
+    const currVal_0:any = comp.filterPlaceholder;
+    check(view,1,0,currVal_0);
+  },(null as any));
+}
+function View_DatatableComponent_2():import1.ɵViewDefinition {
+  return import1.ɵvid(0,[
+      import1.ɵeld(0,(null as any),(null as any),2,'datatable-paging',[[
+        'class',
+        'datatable-paging-header datatable-paging'
+      ]
+      ],(null as any),[[
+        (null as any),
+        'page'
+      ]
+    ],(view,eventName,$event) => {
+      var allowDefault:boolean = true;
+      var comp:any = view.component;
+      if (('page' === eventName)) {
+        const pd_0:any = ((<any>comp.onPagingPage($event)) !== false);
+        allowDefault = (pd_0 && allowDefault);
+      }
+      return allowDefault;
+    },import4.View_DataTablePagingComponent_0,import4.RenderType_DataTablePagingComponent),
+    import1.ɵdid(24576,[
+      [
+        4,
+        4
+      ]
+      ,
+      [
+        'pagingHeader',
+        4
+      ]
+
+    ]
+    ,0,import5.DataTablePagingComponent,([] as any[]),{
+      pagingHeight: [
+        0,
+        'pagingHeight'
+      ]
+      ,
+      rowCount: [
+        1,
+        'rowCount'
+      ]
+      ,
+      pageSize: [
+        2,
+        'pageSize'
+      ]
+      ,
+      offset: [
+        3,
+        'offset'
+      ]
+      ,
+      pagerLeftArrowIcon: [
+        4,
+        'pagerLeftArrowIcon'
+      ]
+      ,
+      pagerRightArrowIcon: [
+        5,
+        'pagerRightArrowIcon'
+      ]
+      ,
+      pagerPreviousIcon: [
+        6,
+        'pagerPreviousIcon'
+      ]
+      ,
+      pagerNextIcon: [
+        7,
+        'pagerNextIcon'
+      ]
+      ,
+      totalMessage: [
+        8,
+        'totalMessage'
+      ]
+      ,
+      selectedCount: [
+        9,
+        'selectedCount'
+      ]
+      ,
+      selectedMessage: [
+        10,
+        'selectedMessage'
+      ]
+
+    }
+    ,{page: 'page'}),
+    import1.ɵted((null as any),['\n      '])
+  ]
+  ,(check,view) => {
+    var comp:any = view.component;
+    const currVal_0:any = comp.pagingHeight;
+    const currVal_1:any = comp.rowCount;
+    const currVal_2:any = comp.pageSize;
+    const currVal_3:any = comp.offset;
+    const currVal_4:any = comp.cssClasses.pagerLeftArrow;
+    const currVal_5:any = comp.cssClasses.pagerRightArrow;
+    const currVal_6:any = comp.cssClasses.pagerPrevious;
+    const currVal_7:any = comp.cssClasses.pagerNext;
+    const currVal_8:any = comp.messages.totalMessage;
+    const currVal_9:any = comp.selected.length;
+    const currVal_10:boolean = (!!comp.selectionType && comp.messages.selectedMessage);
+    check(view,1,1,[
+      currVal_0,
+      currVal_1,
+      currVal_2,
+      currVal_3,
+      currVal_4,
+      currVal_5,
+      currVal_6,
+      currVal_7,
+      currVal_8,
+      currVal_9,
+      currVal_10
+    ]
+    );
+  },(null as any));
+}
+function View_DatatableComponent_3():import1.ɵViewDefinition {
   return import1.ɵvid(0,[
       import1.ɵeld(0,(null as any),(null as any),2,'datatable-header',[[
         'class',
@@ -85,8 +252,20 @@ function View_DatatableComponent_1():import1.ɵViewDefinition {
         allowDefault = (pd_3 && allowDefault);
       }
       return allowDefault;
-    },import2.View_DataTableHeaderComponent_0,import2.RenderType_DataTableHeaderComponent),
-    import1.ɵdid(24576,(null as any),0,import3.DataTableHeaderComponent,([] as any[]),{
+    },import6.View_DataTableHeaderComponent_0,import6.RenderType_DataTableHeaderComponent),
+    import1.ɵdid(24576,[
+      [
+        1,
+        4
+      ]
+      ,
+      [
+        'header',
+        4
+      ]
+
+    ]
+    ,0,import7.DataTableHeaderComponent,([] as any[]),{
       sortAscendingIcon: [
         0,
         'sortAscendingIcon'
@@ -193,11 +372,31 @@ function View_DatatableComponent_1():import1.ɵViewDefinition {
     check(view,0,0,currVal_0,currVal_1);
   });
 }
-function View_DatatableComponent_2():import1.ɵViewDefinition {
+function View_DatatableComponent_4():import1.ɵViewDefinition {
   return import1.ɵvid(0,[
-      import1.ɵeld(0,(null as any),(null as any),2,'datatable-footer',[[
+      import1.ɵeld(0,(null as any),(null as any),2,'datatable-legend',[[
         'class',
-        'datatable-footer'
+        'datatable-legend'
+      ]
+    ],(null as any),(null as any),(null as any),import8.View_DataTableLegendComponent_0,import8.RenderType_DataTableLegendComponent),
+      import1.ɵdid(24576,(null as any),0,import9.DataTableLegendComponent,([] as any[]),{legends: [
+        0,
+        'legends'
+      ]
+    },(null as any)),
+    import1.ɵted((null as any),['\n      '])
+  ]
+  ,(check,view) => {
+    var comp:any = view.component;
+    const currVal_0:any = comp.legends;
+    check(view,1,0,currVal_0);
+  },(null as any));
+}
+function View_DatatableComponent_5():import1.ɵViewDefinition {
+  return import1.ɵvid(0,[
+      import1.ɵeld(0,(null as any),(null as any),2,'datatable-paging',[[
+        'class',
+        'datatable-paging-footer datatable-paging'
       ]
       ],(null as any),[[
         (null as any),
@@ -207,15 +406,27 @@ function View_DatatableComponent_2():import1.ɵViewDefinition {
       var allowDefault:boolean = true;
       var comp:any = view.component;
       if (('page' === eventName)) {
-        const pd_0:any = ((<any>comp.onFooterPage($event)) !== false);
+        const pd_0:any = ((<any>comp.onPagingPage($event)) !== false);
         allowDefault = (pd_0 && allowDefault);
       }
       return allowDefault;
-    },import4.View_DataTableFooterComponent_0,import4.RenderType_DataTableFooterComponent),
-    import1.ɵdid(24576,(null as any),0,import5.DataTableFooterComponent,([] as any[]),{
-      footerHeight: [
+    },import4.View_DataTablePagingComponent_0,import4.RenderType_DataTablePagingComponent),
+    import1.ɵdid(24576,[
+      [
+        5,
+        4
+      ]
+      ,
+      [
+        'pagingFooter',
+        4
+      ]
+
+    ]
+    ,0,import5.DataTablePagingComponent,([] as any[]),{
+      pagingHeight: [
         0,
-        'footerHeight'
+        'pagingHeight'
       ]
       ,
       rowCount: [
@@ -274,7 +485,7 @@ function View_DatatableComponent_2():import1.ɵViewDefinition {
   ]
   ,(check,view) => {
     var comp:any = view.component;
-    const currVal_0:any = comp.footerHeight;
+    const currVal_0:any = comp.pagingHeight;
     const currVal_1:any = comp.rowCount;
     const currVal_2:any = comp.pageSize;
     const currVal_3:any = comp.offset;
@@ -303,9 +514,14 @@ function View_DatatableComponent_2():import1.ɵViewDefinition {
 }
 export function View_DatatableComponent_0():import1.ɵViewDefinition {
   return import1.ɵvid(0,[
-    import1.ɵqud(201326592,1,{bodyComponent: 0}),
+    import1.ɵqud(335544320,1,{header: 0}),
+    import1.ɵqud(201326592,2,{body: 0}),
+    import1.ɵqud(335544320,3,{filter: 0}),
+    import1.ɵqud(335544320,4,{pagingHeader: 0}),
+    import1.ɵqud(335544320,5,{pagingFooter: 0}),
+    import1.ɵqud(201326592,6,{bodyComponent: 0}),
     import1.ɵted((null as any),['\n    ']),
-      import1.ɵeld(0,(null as any),(null as any),12,'div',[[
+      import1.ɵeld(0,(null as any),(null as any),21,'div',[[
         'visibility-observer',
         ''
       ]
@@ -319,21 +535,43 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
       ]
     ],(view,eventName,$event) => {
       var allowDefault:boolean = true;
-      var comp:import6.DatatableComponent = view.component;
+      var comp:import10.DatatableComponent = view.component;
       if (('visible' === eventName)) {
         const pd_0:any = ((<any>comp.recalculate()) !== false);
         allowDefault = (pd_0 && allowDefault);
       }
       return allowDefault;
     },(null as any),(null as any)),
-    import1.ɵdid(106496,(null as any),0,import7.VisibilityDirective,[
+    import1.ɵdid(106496,(null as any),0,import11.VisibilityDirective,[
       import1.ElementRef,
       import1.NgZone
     ]
     ,(null as any),{visible: 'visible'}),
     import1.ɵted((null as any),['\n      ']),
     import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_1),
-    import1.ɵdid(8192,(null as any),0,import8.NgIf,[
+    import1.ɵdid(8192,(null as any),0,import12.NgIf,[
+      import1.ViewContainerRef,
+      import1.TemplateRef
+    ]
+      ,{ngIf: [
+        0,
+        'ngIf'
+      ]
+    },(null as any)),
+    import1.ɵted((null as any),['\n      ']),
+    import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_2),
+    import1.ɵdid(8192,(null as any),0,import12.NgIf,[
+      import1.ViewContainerRef,
+      import1.TemplateRef
+    ]
+      ,{ngIf: [
+        0,
+        'ngIf'
+      ]
+    },(null as any)),
+    import1.ɵted((null as any),['\n      ']),
+    import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_3),
+    import1.ɵdid(8192,(null as any),0,import12.NgIf,[
       import1.ViewContainerRef,
       import1.TemplateRef
     ]
@@ -390,7 +628,7 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
     ]
     ,(view,eventName,$event) => {
       var allowDefault:boolean = true;
-      var comp:import6.DatatableComponent = view.component;
+      var comp:import10.DatatableComponent = view.component;
       if (('page' === eventName)) {
         const pd_0:any = ((<any>comp.onBodyPage($event)) !== false);
         allowDefault = (pd_0 && allowDefault);
@@ -412,12 +650,25 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
         allowDefault = (pd_4 && allowDefault);
       }
       return allowDefault;
-    },import9.View_DataTableBodyComponent_0,import9.RenderType_DataTableBodyComponent),
-      import1.ɵdid(122880,[[
-        1,
+    },import13.View_DataTableBodyComponent_0,import13.RenderType_DataTableBodyComponent),
+    import1.ɵdid(122880,[
+      [
+        6,
         4
       ]
-    ],0,import10.DataTableBodyComponent,([] as any[]),{
+      ,
+      [
+        2,
+        4
+      ]
+      ,
+      [
+        'body',
+        4
+      ]
+
+    ]
+    ,0,import14.DataTableBodyComponent,([] as any[]),{
       scrollbarV: [
         0,
         'scrollbarV'
@@ -529,8 +780,19 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
     ),
     import1.ɵted((null as any),['\n      ']),
     import1.ɵted((null as any),['\n      ']),
-    import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_2),
-    import1.ɵdid(8192,(null as any),0,import8.NgIf,[
+    import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_4),
+    import1.ɵdid(8192,(null as any),0,import12.NgIf,[
+      import1.ViewContainerRef,
+      import1.TemplateRef
+    ]
+      ,{ngIf: [
+        0,
+        'ngIf'
+      ]
+    },(null as any)),
+    import1.ɵted((null as any),['\n      ']),
+    import1.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DatatableComponent_5),
+    import1.ɵdid(8192,(null as any),0,import12.NgIf,[
       import1.ViewContainerRef,
       import1.TemplateRef
     ]
@@ -543,33 +805,35 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
     import1.ɵted((null as any),['\n  '])
   ]
   ,(check,view) => {
-    var comp:import6.DatatableComponent = view.component;
-    check(view,3,0);
-    const currVal_0:any = comp.headerHeight;
-    check(view,6,0,currVal_0);
-    const currVal_1:any = comp.scrollbarV;
-    const currVal_2:any = comp.scrollbarH;
-    const currVal_3:any = comp.loadingIndicator;
-    const currVal_4:any = comp.rowHeight;
-    const currVal_5:any = comp.offsetX;
-    const currVal_6:any = comp.messages.emptyMessage;
-    const currVal_7:any = comp.selectionType;
-    const currVal_8:any = comp.selected;
-    const currVal_9:any = comp.rowIdentity;
-    const currVal_10:any = comp.rowDetail;
-    const currVal_11:any = comp.selectCheck;
-    const currVal_12:any = comp.trackByProp;
-    const currVal_13:any = comp.rowClass;
-    const currVal_14:any = comp.pageSize;
-    const currVal_15:any = comp.rows;
-    const currVal_16:any = comp.columns;
-    const currVal_17:any = comp.offset;
-    const currVal_18:any = comp.rowCount;
-    const currVal_19:any = comp.innerWidth;
-    const currVal_20:any = comp.bodyHeight;
-    check(view,9,1,[
-      currVal_1,
-      currVal_2,
+    var comp:import10.DatatableComponent = view.component;
+    check(view,8,0);
+    const currVal_0:any = comp.isFilter;
+    check(view,11,0,currVal_0);
+    const currVal_1:any = comp.isPagingHeader;
+    check(view,14,0,currVal_1);
+    const currVal_2:any = comp.headerHeight;
+    check(view,17,0,currVal_2);
+    const currVal_3:any = comp.scrollbarV;
+    const currVal_4:any = comp.scrollbarH;
+    const currVal_5:any = comp.loadingIndicator;
+    const currVal_6:any = comp.rowHeight;
+    const currVal_7:any = comp.offsetX;
+    const currVal_8:any = comp.messages.emptyMessage;
+    const currVal_9:any = comp.selectionType;
+    const currVal_10:any = comp.selected;
+    const currVal_11:any = comp.rowIdentity;
+    const currVal_12:any = comp.rowDetail;
+    const currVal_13:any = comp.selectCheck;
+    const currVal_14:any = comp.trackByProp;
+    const currVal_15:any = comp.rowClass;
+    const currVal_16:any = comp.pageSize;
+    const currVal_17:any = comp.rows;
+    const currVal_18:any = comp.columns;
+    const currVal_19:any = comp.offset;
+    const currVal_20:any = comp.rowCount;
+    const currVal_21:any = comp.innerWidth;
+    const currVal_22:any = comp.bodyHeight;
+    check(view,20,1,[
       currVal_3,
       currVal_4,
       currVal_5,
@@ -587,21 +851,25 @@ export function View_DatatableComponent_0():import1.ɵViewDefinition {
       currVal_17,
       currVal_18,
       currVal_19,
-      currVal_20
+      currVal_20,
+      currVal_21,
+      currVal_22
     ]
     );
-    const currVal_21:any = comp.footerHeight;
-    check(view,13,0,currVal_21);
+    const currVal_23:any = comp.isLegend;
+    check(view,24,0,currVal_23);
+    const currVal_24:any = comp.isPagingFooter;
+    check(view,27,0,currVal_24);
   },(check,view) => {
-    var comp:import6.DatatableComponent = view.component;
-    const currVal_0:any = import1.ɵnov(view,3).isVisible;
-    check(view,2,0,currVal_0);
-    const currVal_1:any = import1.ɵnov(view,9).bodyWidth;
-    const currVal_2:any = import1.ɵnov(view,9).bodyHeight;
-    check(view,8,0,currVal_1,currVal_2);
+    var comp:import10.DatatableComponent = view.component;
+    const currVal_0:any = import1.ɵnov(view,8).isVisible;
+    check(view,7,0,currVal_0);
+    const currVal_1:any = import1.ɵnov(view,20).bodyWidth;
+    const currVal_2:any = import1.ɵnov(view,20).bodyHeight;
+    check(view,19,0,currVal_1,currVal_2);
   });
 }
-const RenderType_DatatableComponent_Host:import1.RendererTypeV2 = import1.ɵcrt({
+const RenderType_DatatableComponent_Host:import1.RendererType2 = import1.ɵcrt({
   encapsulation: 2,
   styles: ([] as any[]),
   data: {}
@@ -677,7 +945,7 @@ function View_DatatableComponent_Host_0():import1.ɵViewDefinition {
       }
       return allowDefault;
     },View_DatatableComponent_0,RenderType_DatatableComponent),
-    import1.ɵdid(2285568,(null as any),2,import6.DatatableComponent,[
+    import1.ɵdid(2285568,(null as any),2,import10.DatatableComponent,[
       import1.ElementRef,
       import1.KeyValueDiffers
     ]
@@ -701,4 +969,4 @@ function View_DatatableComponent_Host_0():import1.ɵViewDefinition {
     check(view,0,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9);
   });
 }
-export const DatatableComponentNgFactory:import1.ComponentFactory<import6.DatatableComponent> = import1.ɵccf('ngx-datatable',import6.DatatableComponent,View_DatatableComponent_Host_0);
+export const DatatableComponentNgFactory:import1.ComponentFactory<import10.DatatableComponent> = import1.ɵccf('ngx-datatable',import10.DatatableComponent,View_DatatableComponent_Host_0);

@@ -69,6 +69,9 @@ var DataTablePagerComponent = (function () {
             });
         }
     };
+    DataTablePagerComponent.prototype.reset = function () {
+        this.selectPage(1);
+    };
     DataTablePagerComponent.prototype.calcPages = function (page) {
         var pages = [];
         var startPage = 1;

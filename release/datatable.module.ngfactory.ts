@@ -8,26 +8,39 @@
 import * as import0 from '@angular/core';
 import * as import1 from '../../build/datatable.module';
 import * as import2 from '@angular/common';
+import * as import3 from '@angular/forms';
 class NgxDatatableModuleInjector extends import0.ɵNgModuleInjector<import1.NgxDatatableModule> {
   _CommonModule_0:import2.CommonModule;
-  _NgxDatatableModule_1:import1.NgxDatatableModule;
-  __NgLocalization_2:import2.NgLocaleLocalization;
+  _ɵba_1:import3.ɵba;
+  _FormsModule_2:import3.FormsModule;
+  _NgxDatatableModule_3:import1.NgxDatatableModule;
+  __NgLocalization_4:import2.NgLocaleLocalization;
+  __ɵi_5:import3.ɵi;
   constructor(parent:import0.Injector) {
     super(parent,([] as any[]),([] as any[]));
   }
-  get _NgLocalization_2():import2.NgLocaleLocalization {
-    if ((this.__NgLocalization_2 == null)) { (this.__NgLocalization_2 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
-    return this.__NgLocalization_2;
+  get _NgLocalization_4():import2.NgLocaleLocalization {
+    if ((this.__NgLocalization_4 == null)) { (this.__NgLocalization_4 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
+    return this.__NgLocalization_4;
+  }
+  get _ɵi_5():import3.ɵi {
+    if ((this.__ɵi_5 == null)) { (this.__ɵi_5 = new import3.ɵi()); }
+    return this.__ɵi_5;
   }
   createInternal():import1.NgxDatatableModule {
     this._CommonModule_0 = new import2.CommonModule();
-    this._NgxDatatableModule_1 = new import1.NgxDatatableModule();
-    return this._NgxDatatableModule_1;
+    this._ɵba_1 = new import3.ɵba();
+    this._FormsModule_2 = new import3.FormsModule();
+    this._NgxDatatableModule_3 = new import1.NgxDatatableModule();
+    return this._NgxDatatableModule_3;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
-    if ((token === import1.NgxDatatableModule)) { return this._NgxDatatableModule_1; }
-    if ((token === import2.NgLocalization)) { return this._NgLocalization_2; }
+    if ((token === import3.ɵba)) { return this._ɵba_1; }
+    if ((token === import3.FormsModule)) { return this._FormsModule_2; }
+    if ((token === import1.NgxDatatableModule)) { return this._NgxDatatableModule_3; }
+    if ((token === import2.NgLocalization)) { return this._NgLocalization_4; }
+    if ((token === import3.ɵi)) { return this._ɵi_5; }
     return notFoundResult;
   }
   destroyInternal():void {

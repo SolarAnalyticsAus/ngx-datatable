@@ -25,7 +25,7 @@ import {DatatableComponent} from '../../src/components/datatable.component';
         [columns]="columns"
         [columnMode]="'force'"
         [headerHeight]="50"
-        [footerHeight]="50"
+        [pagingHeight]="50"
         [rowHeight]="'auto'"
         [limit]="10"
         [rows]='rows'>

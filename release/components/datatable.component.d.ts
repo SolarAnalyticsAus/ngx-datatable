@@ -3,7 +3,13 @@ import { ColumnMode, SortType, SelectionType } from '../types';
 import { DataTableBodyComponent } from './body';
 import { DataTableColumnDirective } from './columns';
 import { DatatableRowDetailDirective } from './row-detail';
+import { Legend } from './legend/legend';
 export declare class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
+    header: any;
+    body: any;
+    filter: any;
+    pagingHeader: any;
+    pagingFooter: any;
     /**
      * Gets the rows.
      *
@@ -70,6 +76,24 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
      */
     columnMode: ColumnMode;
     /**
+     * If filter should be visible
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isFilter: boolean;
+    /**
+     * Filter placeholder
+     * @type {string}
+     * @memberOf DatatableComponent
+     */
+    filterPlaceholder: string;
+    /**
+     * Event handler when filter is updated
+     * @type {EventEmitter}
+     * @memberOf DatatableComponent
+     */
+    filterUpdated: EventEmitter<{}>;
+    /**
      * The minimum header height in pixels.
      * Pass a falsey for no header
      *
@@ -78,13 +102,41 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
      */
     headerHeight: any;
     /**
-     * The minimum footer height in pixels.
-     * Pass falsey for no footer
+     * The minimum paging height in pixels.
+     * Pass falsey for no paging
      *
      * @type {number}
      * @memberOf DatatableComponent
      */
-    footerHeight: number;
+    pagingHeight: number;
+    /**
+     * Paging visible in header
+     *
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isPagingHeader: boolean;
+    /**
+     * Paging visible in footer
+     *
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isPagingFooter: boolean;
+    /**
+     * If legend should be visible
+     *
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isLegend: boolean;
+    /**
+     * Legend objects
+     *
+     * @type {Legend[]}
+     * @memberOf DatatableComponent
+     */
+    legends: Legend[];
     /**
      * If the table should use external paging
      * otherwise its assumed that all data is preloaded.
@@ -511,13 +563,13 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
      */
     onBodyScroll(event: MouseEvent): void;
     /**
-     * The footer triggered a page event.
+     * The paging triggered a page event.
      *
      * @param {*} event
      *
      * @memberOf DatatableComponent
      */
-    onFooterPage(event: any): void;
+    onPagingPage(event: any): void;
     /**
      * Recalculates the sizes of the page
      *
@@ -576,4 +628,20 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
      * @memberOf DatatableComponent
      */
     onBodySelect(event: any): void;
+    /**
+     * Emits an event whenever the filter is updated
+     *
+     * @param {event} event
+     *
+     * @memberOf DatatableComponent
+     */
+    filterUpdate(event: any): void;
+    /**
+     * Resets the table settings
+     *
+     * @param {event} event
+     *
+     * @memberOf DatatableComponent
+     */
+    reset(): void;
 }

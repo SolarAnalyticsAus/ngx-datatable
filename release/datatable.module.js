@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
+var forms_1 = require("@angular/forms");
 require("rxjs/add/observable/fromEvent");
 var components_1 = require("./components");
 var directives_1 = require("./directives");
@@ -13,7 +14,8 @@ var NgxDatatableModule = (function () {
 NgxDatatableModule.decorators = [
     { type: core_1.NgModule, args: [{
                 imports: [
-                    common_1.CommonModule
+                    common_1.CommonModule,
+                    forms_1.FormsModule
                 ],
                 declarations: [
                     directives_1.VisibilityDirective,
@@ -25,10 +27,12 @@ NgxDatatableModule.decorators = [
                     components_1.DatatableComponent,
                     components_1.DataTableColumnDirective,
                     components_1.DataTableHeaderComponent,
+                    components_1.DataTableFilterComponent,
                     components_1.DataTableHeaderCellComponent,
                     components_1.DataTableBodyComponent,
-                    components_1.DataTableFooterComponent,
+                    components_1.DataTablePagingComponent,
                     components_1.DataTablePagerComponent,
+                    components_1.DataTableLegendComponent,
                     components_1.ProgressBarComponent,
                     components_1.DataTableBodyRowComponent,
                     components_1.DataTableRowWrapperComponent,

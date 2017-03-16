@@ -16,7 +16,7 @@ import * as import7 from '../../../../build/components/header/header.component';
 import * as import8 from '../../../../build/directives/orderable.directive';
 import * as import9 from '@angular/platform-browser';
 const styles_DataTableHeaderComponent:any[] = ([] as any[]);
-export const RenderType_DataTableHeaderComponent:import0.RendererTypeV2 = import0.ɵcrt({
+export const RenderType_DataTableHeaderComponent:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
   styles: styles_DataTableHeaderComponent,
   data: {}
@@ -160,7 +160,7 @@ function View_DataTableHeaderComponent_2():import0.ɵViewDefinition {
       return allowDefault;
     },import1.View_DataTableHeaderCellComponent_0,import1.RenderType_DataTableHeaderCellComponent),
       import0.ɵdid(335872,[[
-        1,
+        2,
         4
       ]
     ],0,import2.DraggableDirective,[import0.ElementRef],{
@@ -200,7 +200,19 @@ function View_DataTableHeaderComponent_2():import0.ɵViewDefinition {
       longPressEnd: 'longPressEnd'
     }
     ),
-    import0.ɵdid(24576,(null as any),0,import5.DataTableHeaderCellComponent,([] as any[]),{
+    import0.ɵdid(24576,[
+      [
+        1,
+        4
+      ]
+      ,
+      [
+        'headerCell',
+        4
+      ]
+
+    ]
+    ,0,import5.DataTableHeaderCellComponent,([] as any[]),{
       sortType: [
         0,
         'sortType'
@@ -332,6 +344,7 @@ function View_DataTableHeaderComponent_1():import0.ɵViewDefinition {
 }
 export function View_DataTableHeaderComponent_0():import0.ɵViewDefinition {
   return import0.ɵvid(0,[
+    import0.ɵqud(335544320,1,{headerCell: 0}),
     import0.ɵted((null as any),['\n    ']),
     import0.ɵeld(0,(null as any),(null as any),6,'div',[
       [
@@ -368,7 +381,7 @@ export function View_DataTableHeaderComponent_0():import0.ɵViewDefinition {
       import9.DOCUMENT
     ]
     ,(null as any),{reorder: 'reorder'}),
-    import0.ɵqud(301989888,1,{draggables: 1}),
+    import0.ɵqud(301989888,2,{draggables: 1}),
     import0.ɵted((null as any),['\n      ']),
     import0.ɵand(8388608,(null as any),(null as any),1,(null as any),View_DataTableHeaderComponent_1),
     import0.ɵdid(401408,(null as any),0,import6.NgForOf,[
@@ -396,14 +409,14 @@ export function View_DataTableHeaderComponent_0():import0.ɵViewDefinition {
     var comp:import7.DataTableHeaderComponent = view.component;
     const currVal_0:any = comp.columnsByPin;
     const currVal_1:any = comp.trackByGroups;
-    check(view,6,0,currVal_0,currVal_1);
+    check(view,7,0,currVal_0,currVal_1);
   },(check,view) => {
     var comp:import7.DataTableHeaderComponent = view.component;
     const currVal_0:any = comp.columnGroupWidths.total;
-    check(view,1,0,currVal_0);
+    check(view,2,0,currVal_0);
   });
 }
-const RenderType_DataTableHeaderComponent_Host:import0.RendererTypeV2 = import0.ɵcrt({
+const RenderType_DataTableHeaderComponent_Host:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
   styles: ([] as any[]),
   data: {}

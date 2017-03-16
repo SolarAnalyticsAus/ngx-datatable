@@ -28,11 +28,26 @@ Should the table use external paging vs client-side. Default value: `false`
 ## `externalSorting`
 Should the table use external sorting vs client-side. Default value: `false`
 
-## `footerHeight`
-The height of the footer in pixels. Pass a `falsey` for no footer. Default value: `0`
+## `isPagingHeader`
+If paging should be visible in header
+
+## `isPagingFooter`
+If paging should be visible in footer
+
+## `pagingHeight`
+The height of the paging element in pixels. Pass a `falsey` for no footer. Default value: `0`
 
 ## `headerHeight`
 The height of the header in pixels. Pass a `falsey` for no header. Default value: `30`
+
+## `isFilter`
+If filter should be visible
+
+## `isLegend`
+If legend should be visible
+
+## `legends`
+List of legend items. Name-style pairs
 
 ## `messages`
 Static messages in the table you can override for localization.
@@ -65,7 +80,7 @@ The height of the row. This is necessary for virtual scrolling in order to calcu
 
 ## `rowIdentity`
 This will be used when displaying or selecting rows.
-When tracking/comparing them, we'll use the value of this fn 
+When tracking/comparing them, we'll use the value of this fn
 `(fn(x) === fn(y)` instead of `(x === y)`.
 
 ## `rows`
@@ -92,7 +107,7 @@ equality, for prop checking use the `selectCheck` function.
 Default value: `[]`
 
 ## `selectionType`
-Type of row selection. Options are `single`, `multi`, `multiClick` and `chkbox`. 
+Type of row selection. Options are `single`, `multi`, `multiClick` and `chkbox`.
 For no selection pass a `falsey`. Default value: `undefined`
 
 ## `sorts`

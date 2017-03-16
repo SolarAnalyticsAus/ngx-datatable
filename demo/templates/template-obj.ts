@@ -18,7 +18,7 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
         [columns]="columns"
         [columnMode]="'force'"
         [headerHeight]="50"
-        [footerHeight]="50"
+        [pagingHeight]="50"
         [rowHeight]="'auto'">
       </ngx-datatable>
 

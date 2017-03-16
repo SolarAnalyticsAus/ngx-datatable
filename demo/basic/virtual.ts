@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
         [rows]='rows'
         [columnMode]="'standard'"
         [headerHeight]="50"
-        [footerHeight]="50"
+        [pagingHeight]="50"
         [rowHeight]="50"
         [rowClass]="getRowClass"
         [scrollbarV]="true"

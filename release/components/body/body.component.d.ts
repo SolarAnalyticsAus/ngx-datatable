@@ -3,6 +3,7 @@ import { RowHeightCache } from '../../utils';
 import { SelectionType } from '../../types';
 import { ScrollerComponent } from './scroller.component';
 export declare class DataTableBodyComponent implements OnInit, OnDestroy {
+    selector: any;
     scrollbarV: boolean;
     scrollbarH: boolean;
     loadingIndicator: boolean;
@@ -195,4 +196,5 @@ export declare class DataTableBodyComponent implements OnInit, OnDestroy {
      * @memberOf DataTableBodyComponent
      */
     recalcLayout(): void;
+    reset(): void;
 }

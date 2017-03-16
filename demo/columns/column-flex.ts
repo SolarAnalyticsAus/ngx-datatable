@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
         class="material"
         [columnMode]="'flex'"
         [headerHeight]="50"
-        [footerHeight]="50"
+        [pagingHeight]="50"
         [rowHeight]="'auto'"
         [rows]="rows">
         <ngx-datatable-column name="Name" [flexGrow]="3">

@@ -27,13 +27,19 @@
    * Shared Styles
    */
   /**
+   * Filter Styles
+   */
+  /**
    * Header Styles
    */
   /**
    * Body Styles
    */
   /**
-   * Footer Styles
+   * Legend Styles
+   */
+  /**
+   * Paging Styles
    */ }
   .ngx-datatable [hidden] {
     display: none !important; }
@@ -92,6 +98,21 @@
   .ngx-datatable .datatable-row-center,
   .ngx-datatable .datatable-row-right {
     position: relative; }
+  .ngx-datatable .datatable-filter {
+    display: inline-block;
+    float: left;
+    margin: 20px 20px 0 20px; }
+    .ngx-datatable .datatable-filter input {
+      border: 1px solid lightgray;
+      height: 32px;
+      width: 200px;
+      padding: 8px 10px 8px 30px;
+      font-size: 1.1rem; }
+    .ngx-datatable .datatable-filter .icon-search {
+      position: relative;
+      top: 5px;
+      left: -195px;
+      font-size: 1.8rem; }
   .ngx-datatable .datatable-header {
     display: block;
     overflow: hidden; }
@@ -128,7 +149,7 @@
     z-index: 10;
     display: block; }
     .ngx-datatable .datatable-body .datatable-scroll {
-      display: inline-block; }
+      display: inline; }
     .ngx-datatable .datatable-body .datatable-row-detail {
       overflow-y: hidden; }
     .ngx-datatable .datatable-body .datatable-row-wrapper {
@@ -145,48 +166,53 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex; }
-  .ngx-datatable .datatable-footer {
-    display: block;
-    width: 100%; }
-    .ngx-datatable .datatable-footer > div {
+  .ngx-datatable .datatable-legend {
+    display: inline-block;
+    float: left; }
+    .ngx-datatable .datatable-legend ul > li {
+      display: inline-block; }
+  .ngx-datatable .datatable-paging {
+    display: inline-block;
+    float: right;
+    margin: 10px 0; }
+    .ngx-datatable .datatable-paging > div {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center;
-      width: 100%; }
-    .ngx-datatable .datatable-footer .selected-count .page-count {
+              align-items: center; }
+    .ngx-datatable .datatable-paging .selected-count .page-count {
       -webkit-box-flex: 1;
           -ms-flex: 1 1 40%;
               flex: 1 1 40%; }
-    .ngx-datatable .datatable-footer .selected-count .datatable-pager {
+    .ngx-datatable .datatable-paging .selected-count .datatable-pager {
       -webkit-box-flex: 1;
           -ms-flex: 1 1 60%;
               flex: 1 1 60%; }
-    .ngx-datatable .datatable-footer .page-count {
+    .ngx-datatable .datatable-paging .page-count {
       display: inline-block;
       -webkit-box-flex: 1;
           -ms-flex: 1 1 20%;
               flex: 1 1 20%; }
-    .ngx-datatable .datatable-footer .datatable-pager {
+    .ngx-datatable .datatable-paging .datatable-pager {
       display: inline-block;
       -webkit-box-flex: 1;
           -ms-flex: 1 1 80%;
               flex: 1 1 80%;
       text-align: right; }
-      .ngx-datatable .datatable-footer .datatable-pager .pager,
-      .ngx-datatable .datatable-footer .datatable-pager .pager li {
+      .ngx-datatable .datatable-paging .datatable-pager .pager,
+      .ngx-datatable .datatable-paging .datatable-pager .pager li {
         padding: 0;
         margin: 0;
         display: inline-block;
         list-style: none; }
-      .ngx-datatable .datatable-footer .datatable-pager .pager li, .ngx-datatable .datatable-footer .datatable-pager .pager li a {
+      .ngx-datatable .datatable-paging .datatable-pager .pager li, .ngx-datatable .datatable-paging .datatable-pager .pager li a {
         outline: none; }
-      .ngx-datatable .datatable-footer .datatable-pager .pager li a {
+      .ngx-datatable .datatable-paging .datatable-pager .pager li a {
         cursor: pointer;
         display: inline-block; }
-      .ngx-datatable .datatable-footer .datatable-pager .pager li.disabled a {
+      .ngx-datatable .datatable-paging .datatable-pager .pager li.disabled a {
         cursor: not-allowed; }
 
 /*# sourceMappingURL=index.map*/

@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
-export declare class DataTableFooterComponent {
-    footerHeight: number;
+export declare class DataTablePagingComponent {
+    pager: any;
+    pagingHeight: number;
     rowCount: number;
     pageSize: number;
     offset: number;
@@ -14,4 +15,5 @@ export declare class DataTableFooterComponent {
     page: EventEmitter<any>;
     readonly isVisible: boolean;
     readonly curPage: number;
+    reset(): void;
 }

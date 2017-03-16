@@ -44,7 +44,9 @@ var DataTableSelectionComponent = (function () {
         var type = model.type, event = model.event, row = model.row;
         var chkbox = this.selectionType === types_1.SelectionType.checkbox;
         var select = (!chkbox && (type === 'click' || type === 'dblclick')) ||
-            (chkbox && type === 'checkbox');
+            // If row is checkboxable, handle row selection, apply selection to whole row
+            // Ignore events coming from the checkbox column
+            (chkbox && type !== 'checkbox');
         if (select) {
             this.selectRow(event, index, row);
         }
@@ -125,6 +127,10 @@ var DataTableSelectionComponent = (function () {
             var id = _this.rowIdentity(r);
             return id === rowId;
         });
+    };
+    DataTableSelectionComponent.prototype.reset = function () {
+        // Remove selection
+        this.selected.splice(0, this.selected.length);
     };
     return DataTableSelectionComponent;
 }());

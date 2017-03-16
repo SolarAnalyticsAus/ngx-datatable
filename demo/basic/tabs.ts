@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
             [rows]='rows'
             [columnMode]="'force'"
             [headerHeight]="50"
-            [footerHeight]="50"
+            [pagingHeight]="50"
             [rowHeight]="50"
             [scrollbarV]="true">
             <ngx-datatable-column name="Name" width="200"></ngx-datatable-column>
@@ -47,7 +47,7 @@ import { Component } from '@angular/core';
             [rows]='rows'
             [columnMode]="'force'"
             [headerHeight]="50"
-            [footerHeight]="50"
+            [pagingHeight]="50"
             [rowHeight]="50"
             [scrollbarV]="true">
             <ngx-datatable-column name="Name" width="200"></ngx-datatable-column>

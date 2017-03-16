@@ -21,7 +21,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
         class='material expandable'
         [columnMode]="'force'"
         [headerHeight]="50"
-        [footerHeight]="50"
+        [pagingHeight]="50"
         [rowHeight]="50"
         [scrollbarV]="50"
         [rows]='rows'

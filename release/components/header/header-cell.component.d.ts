@@ -24,4 +24,5 @@ export declare class DataTableHeaderCellComponent {
     calcSortDir(sorts: any[]): any;
     onSort(): void;
     calcSortClass(sortDir: any): string;
+    reset(): void;
 }
