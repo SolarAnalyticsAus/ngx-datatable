@@ -1106,7 +1106,14 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
    * @memberOf DatatableComponent
    */
   filterUpdate(event) {
-      this.filterUpdated.emit(event);
+    // Reset paging to display correct filter results
+    if (this.isPagingHeader) {
+      this.pagingHeader.reset();
+    }
+    if (this.isPagingFooter) {
+      this.pagingFooter.reset();
+    }
+    this.filterUpdated.emit(event);
   }
   /**
    * Resets the table settings

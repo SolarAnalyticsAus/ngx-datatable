@@ -874,6 +874,13 @@ var DatatableComponent = (function () {
      * @memberOf DatatableComponent
      */
     DatatableComponent.prototype.filterUpdate = function (event) {
+        // Reset paging to display correct filter results
+        if (this.isPagingHeader) {
+            this.pagingHeader.reset();
+        }
+        if (this.isPagingFooter) {
+            this.pagingFooter.reset();
+        }
         this.filterUpdated.emit(event);
     };
     /**
