@@ -1,9 +1,9 @@
 /**
  * Returns a deep object given a string. zoo['animal.type']
- * @param {object} obj
+ * @param {Object} obj
  * @param {string} path
  */
-export function deepValueGetter(obj: object, path: string) {
+export function deepValueGetter(obj: Object, path: string) {
   if(!obj || !path) return obj;
 
   let current = obj;
