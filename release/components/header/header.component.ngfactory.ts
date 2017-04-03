@@ -186,11 +186,7 @@ function View_DataTableHeaderComponent_2():import0.ɵViewDefinition {
 
     }
     ,(null as any)),
-      import0.ɵdid(2170880,(null as any),0,import3.ResizeableDirective,[import0.ElementRef],{resizeEnabled: [
-        0,
-        'resizeEnabled'
-      ]
-    },{resize: 'resize'}),
+    import0.ɵdid(2170880,(null as any),0,import3.ResizeableDirective,[import0.ElementRef],(null as any),{resize: 'resize'}),
       import0.ɵdid(73728,(null as any),0,import4.LongPressDirective,([] as any[]),{pressModel: [
         0,
         'pressModel'
@@ -263,18 +259,16 @@ function View_DataTableHeaderComponent_2():import0.ɵViewDefinition {
     const currVal_2:any = ((comp.reorderable && view.context.$implicit.draggable) && view.context.$implicit.dragging);
     const currVal_3:any = false;
     check(view,1,0,currVal_0,currVal_1,currVal_2,currVal_3);
-    const currVal_4:any = view.context.$implicit.resizeable;
-    check(view,2,0,currVal_4);
-    const currVal_5:any = view.context.$implicit;
-    check(view,3,0,currVal_5);
-    const currVal_6:any = comp.sortType;
-    const currVal_7:any = view.context.$implicit;
-    const currVal_8:any = comp.sortAscendingIcon;
-    const currVal_9:any = comp.sortDescendingIcon;
-    const currVal_10:any = comp.selectionType;
-    const currVal_11:any = comp.headerHeight;
-    const currVal_12:any = comp.sorts;
-    check(view,4,0,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10,currVal_11,currVal_12);
+    const currVal_4:any = view.context.$implicit;
+    check(view,3,0,currVal_4);
+    const currVal_5:any = comp.sortType;
+    const currVal_6:any = view.context.$implicit;
+    const currVal_7:any = comp.sortAscendingIcon;
+    const currVal_8:any = comp.sortDescendingIcon;
+    const currVal_9:any = comp.selectionType;
+    const currVal_10:any = comp.headerHeight;
+    const currVal_11:any = comp.sorts;
+    check(view,4,0,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10,currVal_11);
   },(check,view) => {
     var comp:any = view.component;
     const currVal_0:any = import0.ɵnov(view,2).resizeEnabled;

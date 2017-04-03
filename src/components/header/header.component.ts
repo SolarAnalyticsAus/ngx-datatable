@@ -21,7 +21,6 @@ import { DataTableColumnDirective } from '../columns';
           #headerCell
           *ngFor="let column of colGroup.columns; trackBy: columnTrackingFn"
           resizeable
-          [resizeEnabled]="column.resizeable"
           (resize)="onColumnResized($event, column)"
           long-press
           [pressModel]="column"
