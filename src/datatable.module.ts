@@ -66,6 +66,9 @@ import {
   ],
   exports: [
     DatatableComponent,
+    DataTableFilterComponent,
+    DataTablePagingComponent,
+    DataTableLegendComponent,
     DatatableRowDetailDirective,
     DatatableRowDetailTemplateDirective,
     DataTableColumnDirective,

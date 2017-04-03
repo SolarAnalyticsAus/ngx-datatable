@@ -7517,6 +7517,9 @@ NgxDatatableModule = __decorate([
         ],
         exports: [
             components_1.DatatableComponent,
+            components_1.DataTableFilterComponent,
+            components_1.DataTablePagingComponent,
+            components_1.DataTableLegendComponent,
             components_1.DatatableRowDetailDirective,
             components_1.DatatableRowDetailTemplateDirective,
             components_1.DataTableColumnDirective,
