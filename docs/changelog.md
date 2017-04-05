@@ -1,5 +1,14 @@
 # Changelog
 
+## 7.0.1
+- Enhancement: Add filter
+- Enhancement: Add legend
+- Enhancement: Table reset for pagination, row and header selection, filter
+- Enhancement: If row is checkboxable, allow selection by clicking anywhere on row
+- Enhancement: Modify select all to select all rows when checkbox is checked, deselect all otherwise (instead of just toggling all rows selected)
+- Enhancement: Improved row detail resizability
+- Enhancement: Allow adding pagination in either header or footer (refactored datatable-footer to datatable-paging)
+
 ## 7.0.0
 - BREAKING: Update to Angular4!
 - Feature: Row classes (#571), (#348)
