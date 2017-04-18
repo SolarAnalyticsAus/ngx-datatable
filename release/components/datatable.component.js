@@ -11,12 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var utils_1 = require("../utils");
+var services_1 = require("../services");
 var types_1 = require("../types");
 var body_1 = require("./body");
 var columns_1 = require("./columns");
 var row_detail_1 = require("./row-detail");
 var DatatableComponent = (function () {
-    function DatatableComponent(element, differs) {
+    function DatatableComponent(scrollbarHelper, element, differs) {
+        this.scrollbarHelper = scrollbarHelper;
         /**
          * List of row objects that should be
          * represented as selected in the grid.
@@ -635,7 +637,7 @@ var DatatableComponent = (function () {
             return;
         var width = this.innerWidth;
         if (this.scrollbarV) {
-            width = width - utils_1.scrollbarWidth;
+            width = width - this.scrollbarHelper.width;
         }
         if (this.columnMode === types_1.ColumnMode.force) {
             utils_1.forceFillColumnWidths(columns, width, forceIdx, allowBleed);
@@ -920,6 +922,7 @@ DatatableComponent.decorators = [
 ];
 /** @nocollapse */
 DatatableComponent.ctorParameters = function () { return [
+    { type: services_1.ScrollbarHelper, },
     { type: core_1.ElementRef, },
     { type: core_1.KeyValueDiffers, },
 ]; };

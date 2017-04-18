@@ -6,6 +6,7 @@ var forms_1 = require("@angular/forms");
 require("rxjs/add/observable/fromEvent");
 var components_1 = require("./components");
 var directives_1 = require("./directives");
+var services_1 = require("./services");
 var NgxDatatableModule = (function () {
     function NgxDatatableModule() {
     }
@@ -16,6 +17,9 @@ NgxDatatableModule.decorators = [
                 imports: [
                     common_1.CommonModule,
                     forms_1.FormsModule
+                ],
+                providers: [
+                    services_1.ScrollbarHelper
                 ],
                 declarations: [
                     directives_1.VisibilityDirective,

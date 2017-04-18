@@ -1,5 +1,33 @@
 # Changelog
 
+## 7.3.1
+- Bug: Fix resize handle drag triggering long press
+- Bug: Fix dragging trigging column sorting
+- Bug: Fix column re-ordering not working on FF
+
+## 7.3.0
+- Feature: Dynamic row heights for virtual scrolling
+- Bug: Do not use `document` for universal support (#668)
+
+## 7.2.1
+- Bug: Fix missing type
+
+## 7.2.0
+- Feature: Allow for dynamic Detail Row heights (#653)
+- Feature: Numeric prop support via support array rows (#494)
+- Perf: Optimize sort code by caching valueGetter and compareFn outside loop.
+- Perf: Set ValueGetter on `TableColumn.$$valueGetter`
+- Bug: Alter setColumnDefaults to work with numeric prop values.
+
+## 7.1.1
+- Perf: Fix memory leaks with templates (#464)
+- Bug: Fix row detail expanded and then collapsed not showing anything until scroll
+
+## 7.1.0
+- Bug: Fix title not set on cell template (#629)
+- Chore: Update to official Angular4
+- Chore: Misc build dep updates
+
 ## 7.0.1
 - Enhancement: Add filter
 - Enhancement: Add legend
