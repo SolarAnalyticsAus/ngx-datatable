@@ -34,7 +34,8 @@ import { nextSortDir } from '../../utils';
         [ngOutletContext]="{ 
           column: column, 
           sortDir: sortDir,
-          sortFn: sortFn
+          sortFn: sortFn,
+          sortClass: sortClass
         }">
       </ng-template>
       <span

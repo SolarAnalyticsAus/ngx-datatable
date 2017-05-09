@@ -9,6 +9,8 @@ import {
       [ngClass]="{'selected-count': selectedMessage}"
       [style.height.px]="pagingHeight">
       <datatable-pager #pager
+        [isFirstPagerEnabled]="isFirstPagerEnabled"
+        [isLastPagerEnabled]="isLastPagerEnabled"
         [pagerLeftArrowIcon]="pagerLeftArrowIcon"
         [pagerRightArrowIcon]="pagerRightArrowIcon"
         [pagerPreviousIcon]="pagerPreviousIcon"
@@ -34,6 +36,8 @@ export class DataTablePagingComponent {
   @Input() rowCount: number;
   @Input() pageSize: number;
   @Input() offset: number;
+  @Input() isFirstPagerEnabled: boolean;
+  @Input() isLastPagerEnabled: boolean;
   @Input() pagerLeftArrowIcon: string;
   @Input() pagerRightArrowIcon: string;
   @Input() pagerPreviousIcon: string;

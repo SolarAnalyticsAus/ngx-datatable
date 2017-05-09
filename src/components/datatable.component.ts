@@ -35,6 +35,8 @@ import { Legend } from './legend/legend';
         [offset]="offset"
         [pagingHeight]="pagingHeight"
         [totalMessage]="messages.totalMessage"
+        [isFirstPagerEnabled]="isFirstPagerEnabled"
+        [isLastPagerEnabled]="isLastPagerEnabled"
         [pagerLeftArrowIcon]="cssClasses.pagerLeftArrow"
         [pagerRightArrowIcon]="cssClasses.pagerRightArrow"
         [pagerPreviousIcon]="cssClasses.pagerPrevious"
@@ -249,6 +251,24 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
    * @memberOf DatatableComponent
    */
   @Input() headerHeight: any = 30;
+
+  /**
+   * If first pager button should be visible
+   * Pass falsey for no first page button
+   *
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isFirstPagerEnabled: boolean;
+
+  /**
+   * If last pager button should be visible
+   * Pass falsey for no last page button
+   *
+   * @type {boolean}
+   * @memberOf DatatableComponent
+   */
+  @Input() isLastPagerEnabled: boolean;
 
   /**
    * The minimum paging height in pixels.
