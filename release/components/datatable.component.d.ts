@@ -104,6 +104,22 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
      */
     headerHeight: any;
     /**
+     * If first pager button should be visible
+     * Pass falsey for no first page button
+     *
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isFirstPagerEnabled: boolean;
+    /**
+     * If last pager button should be visible
+     * Pass falsey for no last page button
+     *
+     * @type {boolean}
+     * @memberOf DatatableComponent
+     */
+    isLastPagerEnabled: boolean;
+    /**
      * The minimum paging height in pixels.
      * Pass falsey for no paging
      *

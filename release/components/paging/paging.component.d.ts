@@ -5,6 +5,8 @@ export declare class DataTablePagingComponent {
     rowCount: number;
     pageSize: number;
     offset: number;
+    isFirstPagerEnabled: boolean;
+    isLastPagerEnabled: boolean;
     pagerLeftArrowIcon: string;
     pagerRightArrowIcon: string;
     pagerPreviousIcon: string;

@@ -28,7 +28,7 @@ var DataTablePagingComponent = (function () {
 DataTablePagingComponent.decorators = [
     { type: core_1.Component, args: [{
                 selector: 'datatable-paging',
-                template: "\n    <div\n      [ngClass]=\"{'selected-count': selectedMessage}\"\n      [style.height.px]=\"pagingHeight\">\n      <datatable-pager #pager\n        [pagerLeftArrowIcon]=\"pagerLeftArrowIcon\"\n        [pagerRightArrowIcon]=\"pagerRightArrowIcon\"\n        [pagerPreviousIcon]=\"pagerPreviousIcon\"\n        [pagerNextIcon]=\"pagerNextIcon\"\n        [page]=\"curPage\"\n        [size]=\"pageSize\"\n        [count]=\"rowCount\"\n        [hidden]=\"!isVisible\"\n        (change)=\"page.emit($event)\">\n      </datatable-pager>\n    </div>\n  ",
+                template: "\n    <div\n      [ngClass]=\"{'selected-count': selectedMessage}\"\n      [style.height.px]=\"pagingHeight\">\n      <datatable-pager #pager\n        [isFirstPagerEnabled]=\"isFirstPagerEnabled\"\n        [isLastPagerEnabled]=\"isLastPagerEnabled\"\n        [pagerLeftArrowIcon]=\"pagerLeftArrowIcon\"\n        [pagerRightArrowIcon]=\"pagerRightArrowIcon\"\n        [pagerPreviousIcon]=\"pagerPreviousIcon\"\n        [pagerNextIcon]=\"pagerNextIcon\"\n        [page]=\"curPage\"\n        [size]=\"pageSize\"\n        [count]=\"rowCount\"\n        [hidden]=\"!isVisible\"\n        (change)=\"page.emit($event)\">\n      </datatable-pager>\n    </div>\n  ",
                 host: {
                     class: 'datatable-paging'
                 },
@@ -43,6 +43,8 @@ DataTablePagingComponent.propDecorators = {
     'rowCount': [{ type: core_1.Input },],
     'pageSize': [{ type: core_1.Input },],
     'offset': [{ type: core_1.Input },],
+    'isFirstPagerEnabled': [{ type: core_1.Input },],
+    'isLastPagerEnabled': [{ type: core_1.Input },],
     'pagerLeftArrowIcon': [{ type: core_1.Input },],
     'pagerRightArrowIcon': [{ type: core_1.Input },],
     'pagerPreviousIcon': [{ type: core_1.Input },],

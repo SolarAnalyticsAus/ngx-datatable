@@ -1,5 +1,7 @@
 import { EventEmitter } from '@angular/core';
 export declare class DataTablePagerComponent {
+    isFirstPagerEnabled: boolean;
+    isLastPagerEnabled: boolean;
     pagerLeftArrowIcon: string;
     pagerRightArrowIcon: string;
     pagerPreviousIcon: string;

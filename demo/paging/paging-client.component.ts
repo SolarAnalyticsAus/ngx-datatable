@@ -22,7 +22,9 @@ import { Component } from '@angular/core';
         [isPagingHeader]="true"
         [isPagingFooter]="true"
         [rowHeight]="'auto'"
-        [limit]="10">
+        [limit]="5"
+        [isFirstPagerEnabled]="true"
+        [isLastPagerEnabled]="true">
       </ngx-datatable>
     </div>
   `
