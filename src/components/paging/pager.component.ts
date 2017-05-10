@@ -8,7 +8,7 @@ import {
 
     <ul class="pager"
       *ngIf="totalPages > 1">
-      <li [class.disabled]="!canPrevious()"
+      <li class="pager-button" [class.disabled]="!canPrevious()"
         *ngIf="isFirstPagerEnabled">
         <a
           href="javascript:void(0)"
@@ -16,20 +16,20 @@ import {
           <i class="{{pagerPreviousIcon}}"></i>
         </a>
       </li>
-      <li [class.disabled]="!canPrevious()">
+      <li class="pager-button" [class.disabled]="!canPrevious()">
         <a
           href="javascript:void(0)"
           (click)="prevPage()">
           <i class="{{pagerLeftArrowIcon}}"></i>
         </a>
       </li>
-      <li [class.active]="page === 1">
+      <li class="pager-page" [class.active]="page === 1">
         <a
           href="javascript:void(0)"
           (click)="selectPage(1)">1</a>
       </li>
-      <li *ngIf="page > pages.length">...</li>
-      <li *ngFor="let pg of pages"
+      <li class="pager-separator" *ngIf="page > pages.length">...</li>
+      <li class="pager-page" *ngFor="let pg of pages"
         [class.active]="pg.number === page"
         [ngClass]="{'border-left': pg.number == 2 || (pg.number > 1 && pg.number != pages[0].number)}">
           <a
@@ -37,19 +37,19 @@ import {
             (click)="selectPage(pg.number)"
             *ngIf="pg.number > 1 && pg.number < totalPages">{{pg.text}}</a>
       </li>
-      <li *ngIf="page <= totalPages - pages.length">...</li>
-      <li [class.active]="page === totalPages"
+      <li class="pager-separator" *ngIf="page <= totalPages - pages.length">...</li>
+      <li class="pager-page" [class.active]="page === totalPages"
         [ngClass]="{'border-left': page > totalPages - pages.length}">
         <a (click)="selectPage(totalPages)">{{totalPages}}</a>
       </li>
-      <li [class.disabled]="!canNext()">
+      <li class="pager-button" [class.disabled]="!canNext()">
         <a
           href="javascript:void(0)"
           (click)="nextPage()">
           <i class="{{pagerRightArrowIcon}}"></i>
         </a>
       </li>
-      <li [class.disabled]="!canNext()"
+      <li class="pager-button" [class.disabled]="!canNext()"
         *ngIf="isLastPagerEnabled">
         <a
           href="javascript:void(0)"
