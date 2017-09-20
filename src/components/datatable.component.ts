@@ -1140,10 +1140,9 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
     }
     this.filterUpdated.emit(event);
   }
+
   /**
    * Resets the table settings
-   *
-   * @param {event} event
    *
    * @memberOf DatatableComponent
    */
@@ -1162,4 +1161,16 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
       this.pagingFooter.reset();
     }
   }
+
+  /**
+   * Resets the table header
+   *
+   * @memberOf DatatableComponent
+   */
+  resetHeader() {
+    if (this.headerHeight) {
+      this.header.reset();
+    }
+  }
+
 }
