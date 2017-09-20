@@ -1,5 +1,5 @@
 /**
- * angular2-data-table v"7.3.2" (https://github.com/swimlane/angular2-data-table)
+ * angular2-data-table v"7.3.3" (https://github.com/swimlane/angular2-data-table)
  * Copyright 2016
  * Licensed under MIT
  */
@@ -6181,8 +6181,6 @@ var DatatableComponent = (function () {
     /**
      * Resets the table settings
      *
-     * @param {event} event
-     *
      * @memberOf DatatableComponent
      */
     DatatableComponent.prototype.reset = function () {
@@ -6198,6 +6196,16 @@ var DatatableComponent = (function () {
         }
         if (this.isPagingFooter) {
             this.pagingFooter.reset();
+        }
+    };
+    /**
+     * Resets the table header
+     *
+     * @memberOf DatatableComponent
+     */
+    DatatableComponent.prototype.resetHeader = function () {
+        if (this.headerHeight) {
+            this.header.reset();
         }
     };
     return DatatableComponent;

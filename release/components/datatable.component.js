@@ -888,8 +888,6 @@ var DatatableComponent = (function () {
     /**
      * Resets the table settings
      *
-     * @param {event} event
-     *
      * @memberOf DatatableComponent
      */
     DatatableComponent.prototype.reset = function () {
@@ -905,6 +903,16 @@ var DatatableComponent = (function () {
         }
         if (this.isPagingFooter) {
             this.pagingFooter.reset();
+        }
+    };
+    /**
+     * Resets the table header
+     *
+     * @memberOf DatatableComponent
+     */
+    DatatableComponent.prototype.resetHeader = function () {
+        if (this.headerHeight) {
+            this.header.reset();
         }
     };
     return DatatableComponent;

@@ -657,9 +657,13 @@ export declare class DatatableComponent implements OnInit, AfterViewInit, DoChec
     /**
      * Resets the table settings
      *
-     * @param {event} event
-     *
      * @memberOf DatatableComponent
      */
     reset(): void;
+    /**
+     * Resets the table header
+     *
+     * @memberOf DatatableComponent
+     */
+    resetHeader(): void;
 }
