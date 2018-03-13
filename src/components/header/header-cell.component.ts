@@ -31,8 +31,8 @@ import { nextSortDir } from '../../utils';
       <ng-template
         *ngIf="column.headerTemplate"
         [ngTemplateOutlet]="column.headerTemplate"
-        [ngOutletContext]="{ 
-          column: column, 
+        [ngTemplateOutletContext]="{
+          column: column,
           sortDir: sortDir,
           sortFn: sortFn,
           sortClass: sortClass

@@ -28,7 +28,7 @@ import { TableColumn } from '../../types/table-column.type';
       <ng-template
         *ngIf="column.cellTemplate"
         [ngTemplateOutlet]="column.cellTemplate"
-        [ngOutletContext]="{ value: value, row: row, column: column }">
+        [ngTemplateOutletContext]="{ value: value, row: row, column: column }">
       </ng-template>
     </div>
   `,

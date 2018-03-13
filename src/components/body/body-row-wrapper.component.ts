@@ -13,7 +13,7 @@ import {
       <ng-template
         *ngIf="rowDetail && rowDetail.template"
         [ngTemplateOutlet]="rowDetail.template"
-        [ngOutletContext]="{ row: row }">
+        [ngTemplateOutletContext]="{ row: row }">
       </ng-template>
     </div>
   `,
